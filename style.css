@@ -12,7 +12,7 @@
 
 body{
     background-color: rgb(46, 46, 46);
-    color: white;
+   
   
 }
 
@@ -51,33 +51,84 @@ body{
 
 /* MOVIES */
 
-.movie{
-        height: 100%;
-        width: 100%;
-        background-color: gray;
-        display: flex;
-        align-items: center;
-        justify-content:center;
-        flex-direction: column;
-        padding: 1rem;
-        border-radius: 7px;
-}
 
 .main-section{
-        margin: 5rem 0;
+        gap: 5%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
-        place-items: center;
 }
-.movie-poster{
-    border-radius: 7px;
+
+
+
+/* cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+    border-radius:10px;
+    cursor:pointer;
+    color: black;
+    height: 350px;
     width: 250px;
-    height: 250px;
-    background-image: url(./images/anika-mikkelson-dWYjy9zIiF8-unsplash.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.movie-details{
     
-}
+  }
+  .content{
+    background-image: url(https://source.unsplash.com/random);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card .profile{
+     border-radius:10px;
+     transition: 0.2s;
+  }
+  .card:hover .profile{
+    transform:scale(1.4);
+    border-top-right-radius:50px;
+    border-top-left-radius:50px;
+  }
+
+  .rating{
+      margin: .6rem 0;
+      font-weight: 600;
+      font-size: 1.5rem;
+  }
+  .back{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 1rem;
+  }
+  .back p{
+    
+      font-size: .8rem;
+  }
+  
+  .card .content{
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+  }
+  .card .content .back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: #f1f1f1e6;
+    transition:1s;
+    z-index:1;
+  }
+  
+  .from-left{
+    top:0;
+    left:-100%;
+  }
+  .card:hover .content .from-left {
+     left:0%;
+  }
+
+  
+ 
