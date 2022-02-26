@@ -1,18 +1,20 @@
 const apiKey = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0f47f5cf344875d7fd1e393bf8ad5e6c&page=1';
 const imageLink = 'https://image.tmdb.org/t/p/w500/';
 const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=0f47f5cf344875d7fd1e393bf8ad5e6c&query=`;
+const searchForm = document.querySelector('#movie-search');
+const mainSection = document.querySelector('.main-section');
 
 
-const getMovieData = async() =>{
-    const response = await fetch(apiKey);
+
+const getMovieData = async(link) =>{
+    const response = await fetch(link);
     const data = await response.json();
     displayMovieData(data.results);
 };
 
-getMovieData();
+getMovieData(apiKey);
 
 const displayMovieData = (data) =>{
-    const mainSection = document.querySelector('.main-section');
     console.log(data);
     for(movie of data){
         const poster = imageLink + movie.poster_path;
@@ -36,4 +38,18 @@ const displayMovieData = (data) =>{
         contentDiv.style.backgroundImage = `url('${poster}')`;
         mainSection.appendChild(div);
     }
-}
+};
+
+searchForm.addEventListener('keyup', function () {
+    
+        const searchValue = searchForm.value.toLowerCase();
+        const searchValueUrl = searchUrl + searchValue;
+        mainSection.textContent = '';
+        getMovieData(searchValueUrl);
+
+
+
+      
+
+
+});
