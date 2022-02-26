@@ -28,7 +28,7 @@ const displayMovieData = (data) =>{
             <h2>${movie.original_title}</h2>
             <span class="rating">${movie.vote_average}</span>
             <p class="des">
-              ${movie.overview}
+              ${movie.overview.slice(0, 250)}
             </p>
           </div>
 
