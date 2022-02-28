@@ -62,16 +62,24 @@ body{
 
 /* MOVIES */
 
-.main-section{
+.main-section,.trending-movies{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin-bottom: 5rem;
-        
+        margin-bottom: 5rem;  
         
        
 }
+
+.trending{
+    text-align: center;
+}
+.trending h1{
+    font-size: 2rem;
+}
+
+
 .popular-title{
     text-align: center;
     font-size: 1.7rem;
@@ -154,5 +162,17 @@ body{
      left:0%;
   }
 
+
+  /* utilty classes */
+
+  .red{
+      color: rgb(219, 52, 52);
+  }
+  .green{
+      color : rgb(48, 156, 38);
+  }
+  .orange{
+      color: rgb(241, 179, 44)
+  }
   
  
