@@ -53,7 +53,7 @@ searchForm.addEventListener('keyup', function () {
         const searchValue = searchForm.value.toLowerCase();
         const searchValueUrl = searchUrl + searchValue;
         mainSection.textContent = '';
-        getMovieData(searchValueUrl);
+        getMovieData(searchValueUrl, mainSection);
 
 });
 
